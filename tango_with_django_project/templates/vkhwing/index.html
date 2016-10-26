@@ -1,0 +1,68 @@
+{% extends 'vkhwing/base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>VK-HWing</title>
+	body {
+  background-image: none !important; 
+  background: black !important;
+}
+
+html > body {
+  background-image: none !important; 
+  background: red !important;
+}
+	
+		
+	</head>
+	<body >
+
+<div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+		<div class="row-fluid">
+                {% block side_block %}
+		{% if user.is_authenticated %}	
+		<h3>Last 5 Updated Albums</h3>		
+		<ul>
+		{% for i in album_new %}
+		<li><a href="/vkhwing/album/{{ i }}">{{ i.name }}</a></li>
+		{% endfor %}
+		</ul>
+		{% else %}
+		<ul>
+		<h3><a href="/vkhwing/register/">Register</a></h3>
+		{% endif %}
+		</ul>
+		{% endblock %}
+		</div>
+	</div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+           <div class="span6">
+                {% block body_block %} 
+		{% if user.is_authenticated %}
+		<h2>Welcome {{ name }}!</h2>
+		<br/>	
+		<h3>Albums</h3>
+		<ul>
+		{% for i in album %}
+		<h4><li><a href="/vkhwing/album/{{ i }}">{{ i.name }}</a>   ( {{ i.count }} photo(s) )</li></h4>
+		{% endfor %}
+		</ul>
+		{% else %}
+		<h2>Welcome Guest!</h2>
+		<ul>
+		<h3><a href="/vkhwing/login/">Login</a></h3>
+		</ul>
+		{% endif %}
+		
+		{% endblock %}
+		
+                </div>
+        </div>
+      </div>
+    </div>
+	</body>
+</html>
+

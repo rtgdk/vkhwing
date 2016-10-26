@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% extends 'vkhwing/base.html' %}
+<html>
+	<head>
+		<title>{% block title %}-Coming Soon!{% endblock %}</title>
+	</head>
+	<body>
+		{% block body_block %}
+<h1> Features coming soon....</h1>
+<ul>
+<li><a href="/vkhwing/chats">Chat</a></li>
+<li><a href="/vkhwing/profile">Profile</a></li>
+<li><a href="/vkhwing/search">Search</a></li>
+<li>Upload videos.</li>
+<li>Upload many photos at a time.</li>
+</ul>
+<h3>If you can think of any other exciting feature,tell any admin! :)</h3>
+{%endblock%}
+      
+
+	</body>
+</html>

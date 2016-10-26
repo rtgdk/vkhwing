@@ -1,0 +1,39 @@
+{% extends 'vkhwing/base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{% block title %}-Chat{% endblock %}</title>
+	
+	
+		
+	</head>
+
+<body>
+{%block body_block %}
+{% if chat_list %}</pre>
+<ul>
+<ul>{% for chat in chat_list %}</ul>
+</ul>
+<ul>
+<ul>
+    <li><a href="/vkhwing/chats/{{ chat.id }}"> {{ chat.name }}</a></li>
+</ul>
+</ul>
+<ul>{% endfor %}</ul>
+<pre>
+ 
+ 
+ 
+{% else %}
+<h2>Chats are coming soon!</h2>
+<h3>What you would be able to do?</h3>
+<ul>
+<li><h4>Create chatrooms and chat in real time.</h4></li>
+<li><h4>Handle privacy for those chats.</h4></li>
+<li><h4>Also guest users can also chat!(Anonymously,If allowed!)</h4></li>
+ 
+{% endif %}
+{%endblock%}
+</body>
+

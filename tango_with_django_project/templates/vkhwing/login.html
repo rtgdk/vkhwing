@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% extends 'vkhwing/base.html' %}
+<html>
+	<head>
+		<title>{% block title %}-Login{% endblock %}</title>
+	</head>
+	<body>
+		{% block body_block %}
+{% if user.is_authenticated %}
+<h3>Already logged in.</h3>
+{%else%}
+<h1>Login to VK-HWing</h1>
+<form id="login_form" method="post" action="/vkhwing/login/">
+{% csrf_token %}
+Username: <input type="text" name="username" value="" size="50" />
+<br />
+Password: <input type="password" name="password" value="" size="50" />
+<br />
+<input type="submit" value="submit" />
+</form>
+<br/>
+<h3>Not Registered?</h3>
+<h3><a href="/vkhwing/register/">Register Here</a></h3>
+{% endif %} 
+{%endblock%}
+      
+
+	</body>
+</html>

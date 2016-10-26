@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% extends 'vkhwing/base.html' %}
+{% load static %}
+	<html>
+	<head>
+		{% block title %}-{{ album_name }}{% endblock %}
+	</head>
+	<body>
+		{% block side_block %}
+		<h3><a href="/vkhwing/album/{{ album_name_url }}/add_photo">Add Photos </a></h3>
+		{% endblock %}
+		{% block body_block %}
+		{% if user.is_authenticated %}
+		<h1>{{ album_name }}</h1>
+		{% if album %}
+			{% if photos %}
+			<ul class="list-unstyled">
+				{% for i in photos %}
+				<li><a href="/media/{{ i.image }}">{{ i.title }}</a></li>
+				<!--<li>By {{i.user}}</li>-->
+				<li>{{i.date}}</li>
+				<li>{{i.user}}</li>
+				<img src="/media/{{ i.image }} " height=500px width=700px />
+				{% endfor %}
+		</ul>
+		{% else %}
+			<strong>No photos currently in album.</strong>
+		{% endif %}
+		
+	{% else %}
+		<h3>The specified album {{ album_name }} does not exist!</h3>
+		<h2><a href="/vkhwing/add_album">Create an album</a></h2>
+	{% endif %}
+	{% else %}
+		<h3><a href="/vkhwing/login">Log In </a> or <a href="/vkhwing/register/">Register</a> to view album.</h3>
+	{% endif%}
+{% endblock %}
+	</body>
+</html>

@@ -1,0 +1,39 @@
+{% extends 'vkhwing/base.html' %}
+{% load static %}
+<!DOCTYPE html>3
+<html>
+	<head>
+		<title>{% block title %}-About{% endblock %}</title>
+	
+	
+		
+	</head>
+	<body>
+		{%block body_block %}
+	
+		<h1>About VK-HWing</h1>
+		You may have heard about "Courtesy H-Wing".
+		<h2>Your Mom.</h2>
+		<h3>Sab Moh Maya hai.</h3>
+		<h2> Sex Bro.</h2>
+		<h4>Kala Khatha.</h4>
+		<h3>Bhabhiji</h3>
+		<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+		<h5>Based on the idea by Vishrut.</h5>
+		<h5>Created by Rohit.</h5> 
+	</div>
+		
+
+	{%endblock%}
+		<h1> You are fucked<h1>
+	</body>
+</html>
+
