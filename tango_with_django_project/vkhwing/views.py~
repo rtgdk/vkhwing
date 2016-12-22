@@ -5,6 +5,7 @@ from vkhwing.models import Album,Photos,ChatRoom
 from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
+from django.utils import simplejson
 def decode_url(album_name_url):
 	album_name=album_name_url.replace('_',' ')
 	return album_name
