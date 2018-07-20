@@ -10,6 +10,7 @@ Here people can upload photos & videos and chat.
 3. `pip install -r requirements.txt`	
 4. `python manage.py makemigrations`
 5. `python manage.py migrate`
-6. `python manage.py createsuperuser`
-7. `python manage.py runserver`
-8. Head over to 127.0.0.1:8000 or localhost:8000
+6. `python populate_vkhwing.py`
+7. `python manage.py createsuperuser`
+8. `python manage.py runserver`
+9. Head over to 127.0.0.1:8000 or localhost:8000
